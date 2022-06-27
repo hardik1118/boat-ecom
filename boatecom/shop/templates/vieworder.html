@@ -1,0 +1,42 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    Boat E-Commerce
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <br>
+  <h2>Hello {{currentuser}}, view your orders here! </h2> <br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Order Id</th>
+      <th scope="col">Order Date</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for odr in orders %}
+    <tr>
+      <th scope="row">{{odr.order_id}}</th>
+      <td>{{odr.order_date}}</td>
+      <td>{{odr.prod_id}}</td>
+      <td>{{odr.quantity}}</td>
+      <td>{{odr.status}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+{% load static %}
+    <script src="{% static 'shop/js/checkout.js' %}"></script>
+{% endblock %}

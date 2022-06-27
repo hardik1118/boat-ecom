@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    CheckOut Items
+{% endblock %}
+
+
+{% block body %}
+ <br>
+<div class="container" id="container">
+
+  <!-- Content here -->
+   <table class="table">
+
+  <tbody id="ordertablebody">
+
+  </tbody>
+</table>
+  <div id="totalamt"></div>
+  <br>
+
+    <form method="post" action="/placeorder/" id="placeorderform">
+        {% csrf_token %}
+        <div id="placeorderformdiv">
+        </div>
+        <input id="placeorderbtn" type="submit" name="" value="Place Order">
+    </form>
+
+</div>
+{% endblock %}
+
+
+{% block js %}
+   {% load static %}
+    <script src="{% static 'shop/js/checkout.js' %}"></script>
+{% endblock %}
+
+

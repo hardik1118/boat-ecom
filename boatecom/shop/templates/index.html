@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    Boat E-Commerce
+{% endblock %}
+
+
+{% block body %}
+
+<br>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for i in product %}
+  <div class="col">
+    <div class="card h-100">
+      <img src="/media/{{i.image}}" class="card-img-top" id="image{{i.id}}" height="300px", width="150px" alt="...">
+      <div class="card-body">
+        <h5 class="card-title" id="name{{i.id}}">{{i.prod_name}}</h5>
+        <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/productview/{{i.id}}"><button type="button" class="btn btn-sm btn-outline-secondary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">View</font></font></button></a>
+                  <div  id="addtocartbtnout{{i.id}}" class="diva2c"><button type="button" class="btn btn-sm btn-outline-secondary addtocartbtn" id="addtocartbtn{{i.id}}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Add to Cart</font></font></button>
+                    </div>
+                  </div>
+            <h5 class="card-title" id="price{{i.id}}">{{i.price}}</h5>
+              </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}
+
+
+{% block js %}
+   {% load static %}
+    <script src="{% static 'shop/js/basic.js' %}"></script>
+{% endblock %}

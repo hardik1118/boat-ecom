@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    Boat E-Commerce
+{% endblock %}
+
+
+{% block body %}
+<br>
+<div class="container-fluid">
+<div class="container my-4">
+    <div class="row">
+    <div class="col-md-4">
+        <img src="/media/{{product.image}}" id="image{{product.id}}" class="img-fluid" alt="{{product.prod_name}}">
+
+    </div>
+    <div class="col-md-8">
+        <h4 id="name{{product.id}}" class="productname">{{product.prod_name}}</h4>
+        <p >Price : Rs.<span id="price{{product.id}}">{{product.price}}</span></p>
+        <p>{{product.desc}}</p>
+        <div  id="addtocartbtnout{{product.id}}" class="diva2c"><button type="button" class="btn btn-sm btn-outline-secondary addtocartbtn" id="addtocartbtn{{product.id}}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Add to Cart</font></font></button>
+    </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+{% block js %}
+{% load static %}
+<script src="{% static 'shop/js/productview.js' %}"></script>
+
+<!--<script src="{% static 'shop/js/basic.js' %}"></script>-->
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    Boat E-Commerce
+{% endblock %}
+
+
+{% block body %}
+<br>
+{% if currentuser %}
+<script>localStorage.clear()</script>
+<h4>Order Placed!</h4>
+{% endif %}
+
+
+{% endblock %}
